@@ -31,6 +31,11 @@ app.use(express.static('build'))
 morgan.token('body', (req) => JSON.stringify(req.body));
 app.use(express.json());
 app.use(morgan(':method :url :status :res[content-length] - :response-time ms :body'));
+
+app.get('/', (req, res) => {
+    res.json({ message: 'Welcome to the Phonebook API' });
+})
+
 app.get('/api/persons', (req, res) => {
     res.json(persons);
 })
@@ -87,6 +92,7 @@ app.use((req, res) => {
 
 
 const PORT = 3000;
+
 app.listen(PORT, () => {
     console.log(`App running in port: ${PORT}`)
 })
