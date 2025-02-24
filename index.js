@@ -39,13 +39,13 @@ morgan.token('body', (req) => JSON.stringify(req.body));
 app.use(express.json());
 app.use(morgan(':method :url :status :res[content-length] - :response-time ms :body'));
 
-const url = process.env.MONGODB_URI;
+// const url = process.env.MONGODB_URI;
 
-mongoose.set('strictQuery', false)
+// mongoose.set('strictQuery', false)
 
-mongoose.connect(url)
-    .then(() => console.log('Connected to MongoDB'))
-    .catch(error => console.error('Error connecting to MongoDB:', error));
+// mongoose.connect(url)
+//     .then(() => console.log('Connected to MongoDB'))
+//     .catch(error => console.error('Error connecting to MongoDB:', error));
 
 
 
