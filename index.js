@@ -92,7 +92,7 @@ app.post('/api/persons', (req, res) => {
 
     newPerson.save().then(savedPerson => {
         res.json(savedPerson);
-    }).catch(error => res.status(400).json({ error: error.response.data.error }));
+    }).catch(error => res.status(400).json({ error: error.message }));
 })
 
 app.put('/api/persons/:id', (req, res, next) => {
